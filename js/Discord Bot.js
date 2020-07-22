@@ -41,11 +41,8 @@ discordClient.on('message', message => {
         // Send "pong" to the same channel
         message.channel.send('pong');
     }
-    if (message.content === 'hello'){
+    if (message.content === 'hello') {
         message.channel.send('world');
-    }
-    if (message.content === 'Fuck' || message.content === 'fuck'){
-        message.channel.send('the jews!')
     }
     if (message.content === 'N-Word'){
         message.channel.send('Nesquik')

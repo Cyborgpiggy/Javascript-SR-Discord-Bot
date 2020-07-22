@@ -4,7 +4,6 @@ const config = require('./config');
 const request = require('request');
 const underscore = require('underscore');
 const fs = require('fs');
-const ffmpeg = require('fluent-ffmpeg');
 const path = require('path')
 const recordingsPath = ('./recordings');
 var pcmData = fs.readFileSync(path.resolve(__dirname, './user_audio'))
