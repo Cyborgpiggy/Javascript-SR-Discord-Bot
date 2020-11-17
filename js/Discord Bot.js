@@ -74,7 +74,7 @@ parseSpeech.then((data) => {
     })
 
 // Create an event listener for messages
-discordClient.on('message', message => {
+discordClient.on('message',  message => {
     // If the message is "ping"
     if (message.content === 'ping') {
         // Send "pong" to the same channel
@@ -86,13 +86,21 @@ discordClient.on('message', message => {
     if (message.content === 'N-Word'){
         message.channel.send('Nesquik');
     }
-    if (message.content === 'join'){
-
-    }
     if (message.content === 'leave'){
         if (message.guild.me.voiceChannel !== undefined) {
             message.guild.me.voiceChannel.leave();
         }
     }
 });
+
+discordClient.on('message', async message => {
+    if (message.content === 'join'){
+        if (message.member.voice.channel) {
+            const connection = await message.member.voice.channel.join();
+        }
+    }
+});
+
 discordClient.login(config.discordApiToken)
+
+
