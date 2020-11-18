@@ -86,17 +86,18 @@ discordClient.on('message',  message => {
     if (message.content === 'N-Word'){
         message.channel.send('Nesquik');
     }
-    if (message.content === 'leave'){
-        if (message.guild.me.voiceChannel !== undefined) {
-            message.guild.me.voiceChannel.leave();
-        }
-    }
+
 });
 
 discordClient.on('message', async message => {
     if (message.content === 'join'){
         if (message.member.voice.channel) {
             const connection = await message.member.voice.channel.join();
+        }
+    }
+    if (message.content === 'leave') {
+        if (message.member.voice.channel) {
+            const connection = await message.member.voice.channel.leave();
         }
     }
 });
