@@ -83,9 +83,6 @@ discordClient.on('message',  message => {
     if (message.content === 'hello'){
         message.channel.send('world');
     }
-    if (message.content === 'N-Word'){
-        message.channel.send('Nesquik');
-    }
 
 });
 
